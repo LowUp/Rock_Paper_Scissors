@@ -6,9 +6,7 @@ computer_choice = Rules()
 
 
 def match(user, computer):
-    if user == "Rock" and computer == "Rock": return "tie"
-    elif user == "Scissor" and computer == "Scissor": return "tie"
-    elif user == "Paper" and computer == "Paper": return "tie"
+    if user == computer and computer == "Rock": return "tie"
     elif user == "Rock" and computer == "Paper": return "computer wins this round"
     elif user == "Paper" and computer == "Rock": return "user wins this round"
     elif user == "Paper" and computer == "Scissor": return "computer wins this round"
