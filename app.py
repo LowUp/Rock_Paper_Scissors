@@ -6,14 +6,12 @@ computer_choice = Rules()
 
 
 def match(user, computer):
-    if user == computer and computer == "Rock": return "tie"
-    elif user == "Rock" and computer == "Paper": return "computer wins this round"
-    elif user == "Paper" and computer == "Rock": return "user wins this round"
-    elif user == "Paper" and computer == "Scissor": return "computer wins this round"
-    elif user == "Scissor" and computer == "Paper": return "user wins this round"
-    elif user == "Rock" and computer == "Scissor": return "user wins this round"
-    elif user == "Scissor" and computer == "Rock": return "computer wins this round"
-    else: return "failed !"
+    if user == computer:
+        return "tie"
+    elif (user == "Rock" and computer == "Scissor") or (user == "Scissor" and computer == "Paper") or (user == "Paper" and computer == "Rock"):
+        return "user wins this round"
+    else:
+        return "computer wins this round"
 
 
 def game():
