@@ -7,11 +7,13 @@ computer_choice = Rules()
 
 def match(user, computer):
     if user == computer:
-        return "tie"
+        return "\ntie"
     elif (user == "Rock" and computer == "Scissor") or (user == "Scissor" and computer == "Paper") or (user == "Paper" and computer == "Rock"):
         return "user wins this round"
-    else:
+    elif (computer == "Rock" and user == "Scissor") or (computer == "Scissor" and user == "Paper") or (computer == "Paper" and user == "Rock"):
         return "computer wins this round"
+    else:
+        return "\nWrong input !"
 
 
 def game():
@@ -22,7 +24,11 @@ def game():
 
     while True:
 
-        input_from_user = int(input("\nChoose:\n(1)Rock\n(2)Paper\n(3)Scissor\n- "))
+        try:
+            input_from_user = int(input("\nChoose:\n1 = Rock\n2 = Paper\n3 = Scissor\n- "))
+        except ValueError:
+            input_from_user = -1
+
         input_from_computer = random.randint(1, 3)
 
         result = match(user_choice.rules(input_from_user), computer_choice.rules(input_from_computer))
